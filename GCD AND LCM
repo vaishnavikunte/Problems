@@ -1,0 +1,30 @@
+GCD AND LCM
+
+class gcdlcm{
+    
+    static int gcd (int a , int b){
+        if(b==0){
+            return a;
+        }else{
+            return gcd(b, a%b);
+        }
+    }
+    
+    static int lcm(int a , int b, int gcdval){
+        return Math.abs(a*b)/gcdval;
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    int a = 20 , b = 30;
+	    
+	    int gcdval = gcdlcm.gcd(a,b);
+	    int lcmval = gcdlcm.lcm(a,b,gcdval);
+	    
+		System.out.println("GCD = "+ gcdval);
+		System.out.println("LCM = "+ lcmval);
+	}
+}
